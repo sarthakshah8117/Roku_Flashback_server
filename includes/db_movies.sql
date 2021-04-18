@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 13, 2021 at 01:40 AM
+-- Generation Time: Apr 18, 2021 at 02:48 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -49,6 +49,33 @@ INSERT INTO `tbl_arating` (`arating_id`, `arating_name`, `arating_desc`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_audio`
+--
+
+DROP TABLE IF EXISTS `tbl_audio`;
+CREATE TABLE IF NOT EXISTS `tbl_audio` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `song_format` varchar(100) NOT NULL,
+  `song_name` varchar(100) NOT NULL,
+  `thumbnail` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_audio`
+--
+
+INSERT INTO `tbl_audio` (`id`, `song_format`, `song_name`, `thumbnail`) VALUES
+(1, 'blue.mp3', 'Blue', 'blue.jpg'),
+(2, 'country_road.mp3', 'Country Road', 'country_road.jpg'),
+(3, 'sunshine.mp3', 'Sunshine', 'sunshine.jpg'),
+(4, 'rocky.mp3', 'Rocky', 'rocky.jpg'),
+(5, 'loveagain.mp3', 'Loveagain', 'loveagain.jpg'),
+(6, 'K_World.mp3', 'K world', 'K_World.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_cast`
 --
 
@@ -65,34 +92,29 @@ CREATE TABLE IF NOT EXISTS `tbl_cast` (
 --
 
 INSERT INTO `tbl_cast` (`cast_id`, `cast_name`) VALUES
-(36, 'Amy Adams'),
-(26, 'Andrew Garfield'),
-(8, 'Aneurin Barnard'),
-(42, 'Anna Kendrick'),
-(14, 'Boyd Holbrook'),
-(5, 'Bradley Cooper'),
-(1, 'Chris Pratt'),
-(19, 'Colm Hill'),
-(13, 'Dafne Keen'),
-(7, 'Damien Bonnard'),
-(22, 'Dan Stevens'),
-(30, 'Darcy Bryce'),
-(3, 'Dave Bautista'),
-(33, 'Ed Skrein'),
-(21, 'Emma Watson'),
-(6, 'Fionn Whitehead'),
-(38, 'Forest Whitaker'),
-(46, 'Harrison Ford'),
-(11, 'Hugh Jackman'),
-(28, 'Jacob Warner'),
-(10, 'James Bloor'),
-(37, 'Jeremy Renner'),
-(45, 'Joseph Gordon-Levitt'),
-(24, 'Josh Gad'),
-(32, 'Karan Soni'),
+(30, '	Robert Forster'),
+(11, 'Al Pacino'),
+(8, 'Beau Bridges'),
+(37, 'Bill Murray'),
+(32, 'Brian Blessed'),
+(26, 'Burt Lancaster'),
+(36, 'Charles Aznavour'),
+(6, 'Charles Bronson'),
+(38, 'Chevy Chase'),
+(14, 'Cristina Ferrare'),
+(24, 'Helen Hunt'),
+(3, 'Jackie Chan'),
+(42, 'Jane Curtin'),
+(7, 'Jason Robards'),
+(19, 'John Carradine'),
+(13, 'John Wayne'),
+(22, 'Kareem Abdul-Jabbar'),
 (20, 'Kathryn Kirkpatrick'),
+(45, 'Keanu Reeves'),
 (25, 'Kevin Kline'),
 (9, 'Lee Armstrong'),
+(33, 'Lee Marvin'),
+(1, 'Lee Van Cleef'),
 (43, 'Leonardo DiCaprio'),
 (23, 'Luke Evans'),
 (40, 'Mark OBrien'),
@@ -102,10 +124,15 @@ INSERT INTO `tbl_cast` (`cast_id`, `cast_name`) VALUES
 (47, 'Miles Teller'),
 (29, 'Milo Gibson'),
 (12, 'Patrick Stewart'),
+(28, 'Richard Burton'),
 (27, 'Richard Pyros'),
+(46, 'Robert Kaylor'),
+(5, 'Robert Morse'),
+(21, 'Robert Redford'),
 (31, 'Ryan Reynolds'),
 (52, 'Sandra Bullock'),
 (44, 'Saoirse Ronan'),
+(10, 'Scott Weinger'),
 (17, 'Sheena Kamal'),
 (35, 'Stefan Kapicic'),
 (15, 'Stephen Merchant'),
@@ -118,27 +145,12 @@ INSERT INTO `tbl_cast` (`cast_id`, `cast_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_comments`
---
-
-DROP TABLE IF EXISTS `tbl_comments`;
-CREATE TABLE IF NOT EXISTS `tbl_comments` (
-  `comments_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `comments_auth` varchar(125) NOT NULL,
-  `comments_copy` text NOT NULL,
-  `comments_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`comments_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_country`
 --
 
 DROP TABLE IF EXISTS `tbl_country`;
 CREATE TABLE IF NOT EXISTS `tbl_country` (
-  `country_id` smallint(3) NOT NULL AUTO_INCREMENT,
+  `country_id` smallint(6) NOT NULL AUTO_INCREMENT,
   `country_name` varchar(100) NOT NULL,
   PRIMARY KEY (`country_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=195 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
@@ -148,36 +160,36 @@ CREATE TABLE IF NOT EXISTS `tbl_country` (
 --
 
 INSERT INTO `tbl_country` (`country_id`, `country_name`) VALUES
-(1, 'Albania'),
-(2, 'Algeria'),
-(3, 'Andorra'),
-(4, 'Angola'),
-(5, 'Anguilla'),
-(6, 'Antarctica'),
-(7, 'Antigua'),
-(8, 'Antilles'),
-(9, 'Argentina'),
-(10, 'Armenia'),
-(11, 'Aruba'),
-(12, 'Australia'),
-(13, 'Austria'),
-(14, 'Azerbaijan'),
-(15, 'Bahamas'),
-(16, 'Bangladesh'),
-(17, 'Barbados'),
-(18, 'Belarus'),
-(19, 'Belgium'),
-(20, 'Belize'),
-(21, 'Benin'),
-(22, 'Bermuda'),
-(23, 'Bhutan'),
-(24, 'Bolivia'),
-(25, 'Bosnia'),
-(26, 'Botswana'),
-(27, 'Brazil'),
-(28, 'Brunei'),
-(29, 'Bulgaria'),
-(30, 'Burkina Faso'),
+(1, 'USA'),
+(2, 'USA'),
+(3, 'USA'),
+(4, 'USA'),
+(5, 'Mexico'),
+(6, 'UK'),
+(7, 'UK'),
+(8, 'USA'),
+(9, 'UK'),
+(10, 'UK'),
+(11, 'USA'),
+(12, 'UK'),
+(13, 'USA'),
+(14, 'UK'),
+(15, 'UK'),
+(16, 'USA'),
+(17, 'USA'),
+(18, 'UK'),
+(19, 'USA'),
+(20, 'UK'),
+(21, 'UK'),
+(22, 'USA'),
+(23, 'UK'),
+(24, 'UK'),
+(25, 'USA'),
+(26, 'UK'),
+(27, 'USA'),
+(28, 'USA'),
+(29, 'UK'),
+(30, 'UK'),
 (31, 'Burundi'),
 (32, 'Cambodia'),
 (33, 'Cameroon'),
@@ -354,34 +366,43 @@ CREATE TABLE IF NOT EXISTS `tbl_director` (
   `director_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
   `director_name` varchar(250) NOT NULL,
   PRIMARY KEY (`director_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_director`
 --
 
 INSERT INTO `tbl_director` (`director_id`, `director_name`) VALUES
-(1, 'James Gunn'),
-(2, 'Christopher Nolan'),
-(3, 'James Mangold'),
-(4, 'Joon-ho Bong'),
-(5, 'Bill Condon'),
-(6, 'Mel Gibson'),
-(7, 'Tim Miller'),
+(1, 'Lewis Gilbert'),
+(2, 'George Seaton'),
+(3, 'Philip Leacock'),
+(4, 'Tom Moore'),
+(5, 'Juan López Moctezuma'),
+(6, 'Norman Tokar'),
+(7, 'Robert F. Slatzer'),
 (8, 'Denis Villeneuve '),
-(9, 'Dexter Fletcher'),
-(10, 'Mike Mitchell'),
-(11, 'Walt Dohrn'),
-(12, 'Alejandro Gonzalez Inarritu'),
-(13, 'John Crowley '),
-(14, 'Robert Zemeckis'),
-(15, 'Florian Gallenberger '),
-(16, 'J.J. Abrams'),
-(17, 'Damien Chazelle'),
-(18, 'Joseph Gordon-Levitt '),
-(19, 'Alfonso Cuaron'),
-(20, 'Ang Lee'),
-(21, 'David O. Russell');
+(9, 'Andrew V. McLaglen'),
+(10, 'Tom Gries'),
+(11, ' Jim Abrahams'),
+(12, ' Lewis Teague'),
+(13, 'Robert Clouse '),
+(14, ' Samuel Fuller'),
+(15, ' Stuart Rosenberg'),
+(16, 'J. Lee Thompson'),
+(17, 'Harold Ramis'),
+(18, 'Murray Mintz '),
+(19, 'William Friedkin'),
+(20, 'Jules Dassin'),
+(21, ' Ron Clements'),
+(22, 'Ivan Reitman'),
+(23, ' Lana Wachowski'),
+(24, 'Jan de Bont'),
+(25, 'Chris Buck'),
+(26, ' Stuart Rosenberg'),
+(27, 'Jules Dassin'),
+(28, 'Robert F. Slatzer'),
+(29, 'George Seaton'),
+(30, ' Samuel Fuller');
 
 -- --------------------------------------------------------
 
@@ -394,29 +415,43 @@ CREATE TABLE IF NOT EXISTS `tbl_genre` (
   `genre_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
   `genre_name` varchar(125) NOT NULL,
   PRIMARY KEY (`genre_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_genre`
 --
 
 INSERT INTO `tbl_genre` (`genre_id`, `genre_name`) VALUES
-(1, 'Action'),
-(2, 'Adventure'),
-(3, 'Comedy'),
-(4, 'Crime'),
-(5, 'Drama'),
-(6, 'Historical'),
-(7, 'Horror'),
-(8, 'Musical'),
-(9, 'Science Fiction'),
-(10, 'War'),
-(11, 'Western'),
-(12, 'Animation'),
-(13, 'Family'),
-(14, 'Fantasy'),
-(15, 'Romance'),
-(16, 'Sport');
+(1, 'Drama'),
+(2, 'Disaster film'),
+(3, 'Historical'),
+(4, 'Comedy'),
+(5, 'Mystery'),
+(6, 'Comedy'),
+(7, 'Western'),
+(8, 'Horror'),
+(9, ' Biography'),
+(10, ' Drama '),
+(11, 'Comedy'),
+(12, ' Horror'),
+(13, 'Action'),
+(14, 'Drama'),
+(15, 'Drama'),
+(16, 'Action'),
+(17, 'Comedy'),
+(18, 'Drama'),
+(19, 'Drama'),
+(20, 'Drama'),
+(21, 'Animation'),
+(22, 'Action'),
+(23, 'Action'),
+(24, 'Action'),
+(25, 'Animation'),
+(26, 'Drama'),
+(27, 'Drama'),
+(28, 'Animation'),
+(29, 'Comedy'),
+(30, 'Animation');
 
 -- --------------------------------------------------------
 
@@ -436,36 +471,36 @@ CREATE TABLE IF NOT EXISTS `tbl_language` (
 --
 
 INSERT INTO `tbl_language` (`lang_id`, `lang_name`) VALUES
-(1, 'Abkhaz'),
-(2, 'Afar'),
-(3, 'Afrikaans'),
-(4, 'Akan'),
-(5, 'Albanian'),
-(6, 'Amharic'),
-(7, 'Arabic'),
-(8, 'Aragonese'),
-(9, 'Armenian'),
-(10, 'Assamese'),
-(11, 'Avaric'),
-(12, 'Avestan'),
-(13, 'Aymara'),
-(14, 'Azerbaijani'),
-(15, 'Bambara'),
-(16, 'Bashkir'),
-(17, 'Basque'),
-(18, 'Belarusian'),
-(19, 'Bengali'),
-(20, 'Bihari'),
-(21, 'Bislama'),
-(22, 'Bosnian'),
-(23, 'Breton'),
-(24, 'Bulgarian'),
-(25, 'Burmese'),
-(26, 'Catalan'),
-(27, 'Valencian'),
-(28, 'Chamorro'),
-(29, 'Chechen'),
-(30, 'Chichewa'),
+(1, 'English'),
+(2, 'English'),
+(3, 'English'),
+(4, 'English'),
+(5, 'English'),
+(6, 'English'),
+(7, 'English'),
+(8, 'English'),
+(9, 'Spanish'),
+(10, 'Irish'),
+(11, 'English'),
+(12, 'English'),
+(13, 'English'),
+(14, 'English'),
+(15, 'English'),
+(16, 'English'),
+(17, 'English'),
+(18, 'English'),
+(19, 'English'),
+(20, 'English'),
+(21, 'English'),
+(22, 'English'),
+(23, 'English'),
+(24, 'English'),
+(25, 'English'),
+(26, 'English'),
+(27, 'English'),
+(28, 'English'),
+(29, 'English'),
+(30, 'English'),
 (31, 'Chewa'),
 (32, 'Nyanja'),
 (33, 'Chinese'),
@@ -669,34 +704,43 @@ CREATE TABLE IF NOT EXISTS `tbl_movies` (
   `movies_trailer` varchar(75) NOT NULL DEFAULT 'trailer_default.jpg',
   `movies_release` varchar(125) NOT NULL,
   PRIMARY KEY (`movies_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_movies`
 --
 
 INSERT INTO `tbl_movies` (`movies_id`, `movies_cover`, `movies_title`, `movies_year`, `movies_runtime`, `movies_storyline`, `movies_trailer`, `movies_release`) VALUES
-(1, 'guardians2.jpg', 'Guardians of the Galaxy Vol. 2', '2017', '2h 16m', 'The Guardians must fight to keep their newfound family together as they unravel the mystery of Peter Quill&rsquo;s true parentage.', 'Guardians2.mp4', 'May 5, 2017'),
-(2, 'dunkirk.jpg', 'Dunkirk', '2017', '1h 46m', 'Allied soldiers from Belgium, the British Empire and France are surrounded by the German army and evacuated during a fierce battle in World War II.', 'Dunkirk.mp4', 'July 21, 2017'),
-(3, 'logan.jpg', 'Logan', '2017', '2h 17m', 'In the near future, a weary Logan cares for an ailing Professor X, somewhere on the Mexican border. However, Logan&rsquo;s attempts to hide from the world, and his legacy, are upended when a young mutant arrives, pursued by dark forces.', 'Logan.mp4', 'March 3,2017'),
-(4, 'okja.jpg', 'Okja', '2017', '2h', ' Meet Mija, a young girl who risks everything to prevent a powerful, multi-national company from kidnapping her best friend - a fascinating animal named Okja. ', 'Okja.mp4', 'June 28,2017'),
-(5, 'beauty.jpg', 'Beauty and the Beast', '2017', '2h 9min', 'An adaptation of the fairy tale about a monstrous-looking prince and a young woman who fall in love. ', 'Beauty.mp4', 'March 17, 2017'),
-(6, 'hacksaw.jpg', 'Hacksaw Ridge', '2016', '2h 19m', 'WWII American Army Medic Desmond T. Doss, who served during the Battle of Okinawa, refuses to kill people, and becomes the first man in American history to receive the Medal of Honor without firing a shot.', 'Hacksaw.mp4', 'November 4, 2016'),
-(7, 'deadpool.jpg', 'Deadpool', '2016', '1h 48m', 'A fast-talking mercenary with a morbid sense of humor is subjected to a rogue experiment that leaves him with accelerated healing powers and a quest for revenge.', 'Bloodpool.mp4', 'Febuary 12, 2016'),
-(8, 'arrival.jpg', 'Arrival', '2016', '1h 56m', 'When twelve mysterious spacecraft appear around the world, linguistics professor Louise Banks is tasked with interpreting the language of the apparent alien visitors.', 'Arrival.mp4', 'November 11, 2016'),
-(9, 'eddie.jpg', 'Eddie the Eagle', '2016', '1h 46m', 'The story of Eddie Edwards, the notoriously tenacious British underdog ski jumper who charmed the world at the 1988 Winter Olympics.', 'Eddie.mp4', 'Febuary 26, 2016'),
-(10, 'trolls.jpg', 'Trolls', '2016', '1h 32m', 'After the Bergens invade Troll Village, Poppy, the happiest Troll ever born, and the curmudgeonly Branch set off on a journey to rescue her friends.', 'Trolls.mp4', 'November 4, 2016'),
-(11, 'revenant.jpg', 'The Revenant', '2015', '2h 36m', 'A frontiersman on a fur trading expedition in the 1820s fights for survival after being mauled by a bear and left for dead by members of his own hunting team.', 'Revenant.mp4', 'January 8, 2015'),
-(12, 'brooklyn.jpg', 'Brooklyn', '2015', '1h 57m', 'An Irish immigrant lands in 1950s Brooklyn, where she quickly falls into a romance with a local. When her past catches up with her, however, she must choose between two countries and the lives that exist within.', 'Brooklyn.mp4', 'November 25, 2015'),
-(13, 'walk.jpg', 'The Walk', '2015', '2h 3m', 'In 1974, high-wire artist Philippe Petit recruits a team of people to help him realize his dream: to walk the immense void between the World Trade Center towers.', 'Walk.mp4', 'October 9, 2015'),
-(14, 'colonia.jpg', 'Colonia', '2015', '1h 46m', 'A young woman&rsquo;s desperate search for her abducted boyfriend that draws her into the infamous Colonia Dignidad, a sect nobody has ever escaped from.', 'Colonia.mp4', 'April 15, 2015'),
-(15, 'force.jpg', 'Star Wars: The Force Awakens', '2015', '2h 16m', 'Three decades after the Empire&rsquo;s defeat, a new threat arises in the militant First Order. Stormtrooper defector Finn and spare parts scavenger Rey are caught up in the Resistance&rsquo;s search for the missing Luke Skywalker.', 'Force.mp4', 'December 18, 2015'),
-(16, 'whiplash.jpg', 'Whiplash', '2014', '1h 47m', 'A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student\'s potential.', 'Whiplash.mp4', 'October 15, 2014'),
-(17, 'guardians.jpg', 'Guardians of the Galaxy', '2014', '2h 1m', 'A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.', 'Guardians.mp4', 'August 1, 2014'),
-(18, 'donjon.jpg', 'Don Jon', '2013', '1h 30m', 'A New Jersey guy dedicated to his family, friends, and church, develops unrealistic expectations from watching porn and works to find happiness and intimacy with his potential true love.', 'donjon.mp4', 'September 27, 2013'),
-(19, 'gravity.jpg', 'Gravity', '2013', '1h 31m', 'Two astronauts work together to survive after an accident which leaves them alone in space.', 'Gravity.mp4', 'October 4, 2013'),
-(20, 'pi.jpg', 'Life of Pi', '2012', '2h 7m', 'A young man who survives a disaster at sea is hurtled into an epic journey of adventure and discovery. While cast away, he forms an unexpected connection with another survivor: a fearsome Bengal tiger.', 'Pi.jpg', 'November 21, 2012'),
-(21, 'silver.jpg', 'Silver Linings Playbook', '2012', '2h 2m', 'After a stint in a mental institution, former teacher Pat Solitano moves back in with his parents and tries to reconcile with his ex-wife. Things get more challenging when Pat meets Tiffany, a mysterious girl with problems of her own.', 'Silver.jpg', 'December 25, 2012');
+(1, 'The Adventurers.jpg', 'The Adventurers', '1970', ' 2h 51min', 'The wealthy playboy son of an assassinated South American diplomat discovers that his father was really murdered on orders of the corrupt president of the country.', 'The Adventurers.mp4', '16 April 1970'),
+(2, 'Airport.jpg', 'Airport', '1970', '2h 17min', 'A bomber on board an airplane, an airport almost closed by snow, and various personal problems of the people involved.', 'Airport.mp4', '24 April 1970'),
+(3, 'And God Created Woman.jpg', 'And God Created Woman', '1988', '1h 40min', 'Aspiring and incarcerated rock singer, Robin Shea (Rebecca De Mornay) seduces prison guard Billy Moran (Vincent Spano).', 'And God Created Woman.mp4', '4 March 1988'),
+(4, 'Maybe Baby.jpg', 'Maybe Baby', '1988', '1h 28min', 'For a happily married man, life changes completely and he finds himself in distress when his wife decides to have a baby after several years of marriage.', 'Maybe Baby.mp4', '5 December 1988'),
+(5, 'Mary.jpg', 'Mary, Mary, Bloody Mary', '1978', '1h 41min', 'A female bisexual artist turns out to be a vampire. ', 'Mary.mp4', '9 November 1978'),
+(6, 'Boatniks.jpg', 'The Boatniks', '1970', '1h 39min', 'Newly assigned to duty in the coast guard at Newport Beach, a young ensign finds himself involved in romantic complications, as well as with jewel thieves, whose antics contribute to moments of hysteria and hilarity.', 'Boatniks.mp4', ' 8 July 1970'),
+(7, 'Barquero.jpg', 'Barquero', '1970', '1h 55m', 'At a river crossing, a stand-off between a gang of outlaws and local townsfolk ensues when the ferry barge operator refuses to ferry the gang across the river.', 'Barquero.mp4', ' 28 June 1970'),
+(8, 'Bigfoot.jpg', 'Bigfoot', '1970', '1h 24min', 'Bigfoot kidnaps some women and some bikers decide to go on a rescue mission to save them.', 'Bigfoot.mp4', ' 21 October 1970'),
+(9, 'Chisum.jpg', 'Chisum', '1970', '1h 51min', 'Cattle baron John Chisum joins forces with Billy the Kid and Pat Garrett to fight the Lincoln County land war.', 'Chisum.mp4', ' 23 July 1970'),
+(10, 'Fools.jpg', 'Fools', '1971', '1h 32m', 'An aging actor finds himself falling for the beautiful, and much younger, wife of an attorney.', 'Fools.mp4', ' 3 December 1971'),
+(11, 'Airplane!.jpg', 'Airplane!', '1980', ' 1h 28min', 'A man afraid to fly must ensure that a plane lands safely after the pilots become sick.', 'Airplane!.mp4', '7 August 1980'),
+(12, 'Alligator.jpg', 'Alligator', '1980', '1h 57m', 'A baby alligator is flushed down a Chicago toilet and survives by eating discarded laboratory rats injected with growth hormones. The small reptile grows gigantic, escapes the city sewers, and goes on a rampage.', 'Alligator.mp4', '14 November 1980'),
+(13, 'Battle.jpg', 'Battle Creek Brawl', '1980', '1h 35min', 'A young Asian-American martial artist is forced to participate in a brutal formal street-fighting competition.', 'Battle.mp4', ' 29 August 1980'),
+(14, 'Big.jpg', 'The Big Red One', '1980', '1h 46m', 'A hardened sergeant and the four core members of his infantry unit try to survive World War II as they move from battle to battle throughout Europe.', 'Big.mp4', ' 2 October 1980'),
+(15, 'Brubaker.jpg', 'Brubaker', '1980', '2h 16m', 'The new warden of a small prison farm in Arkansas tries to clean it up of corruption after initially posing as an inmate.', 'Brubaker.mp4', '11 September 1980'),
+(16, 'Cabo.jpg', 'Cabo Blanco', '1981', '1h 47m', 'In 1948, an assortment of shady characters are searching for Nazi loot, sunken off the coast of Peru.', 'Cabo.mp4', ' 1 February 1981'),
+(17, 'Caddyshack.jpg', 'Caddyshack', '1980', '2h 1m', 'An exclusive golf course has to deal with a brash new member and a destructive dancing gopher.', 'Caddyshack.mp4', ' 14 August 1980'),
+(18, 'Carny.jpg', 'Carny', '1980', '1h 30m', 'Tired of her dull job as a waitress, Donna decides to join two carnival hustlers and see what life in their field is like.', 'Carny.mp4', '23 May 1980'),
+(19, 'Cruising.jpg', 'Cruising', '1980', '1h 31m', 'A police detective goes undercover in the underground S&M gay subculture of New York City to catch a serial killer who is preying on gay men.', 'Cruising.mp4', ' 11 September 1980'),
+(20, 'Circle.jpg', 'Circle of Two', '1981', '2h 7m', 'The story of the impossible love between a schoolgirl and a sixty-year-old painter.', 'Circle.mp4', ' 7 May 1981'),
+(21, 'Aladdin.jpg', 'Aladdin', '1993', '2h 2m', 'A kindhearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true.', 'Aladdin.mp4', ' 17 November 1993'),
+(22, 'Ghostbusters.jpg', 'Ghostbusters', '1984', '1h 45min', 'Three former parapsychology professors set up shop as a unique ghost removal service.', 'Ghostbusters.mp4', '7 December 1984'),
+(23, 'Matrix.jpg', 'The Matrix', '1999', '1h 31m', 'When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth.', 'Matrix.mp4', ' 11 June 1999'),
+(24, 'Twister.jpg', 'Twister', '1996', '1h 31m', 'Bill and Jo Harding, advanced storm chasers on the brink of divorce, must join together to create an advanced weather alert system by putting themselves in the cross-hairs of extremely violent tornadoes.', 'Twister.mp4', '  26 July 1996'),
+(25, 'Tarzan.jpg', 'Tarzan', '1999', '1h 31m', 'A man raised by gorillas must decide where he really belongs when he discovers he is a human.', 'Tarzan.mp4', ' 22 October 1999'),
+(26, 'Hocus.jpg', 'Hocus Pocus', '1993', '2h 31m', 'A curious youngster moves to Salem, where he struggles to fit in before awakening a trio of diabolical witches that were executed in the 17th century.', 'Hocus.mp4', ' 29 October 1993'),
+(27, 'Addams.jpg', 'The Addams Family', '1991', '1h 11m', 'Con artists plan to fleece an eccentric family using an accomplice who claims to be their long-lost uncle.', 'Addams.mp4', ' 13 December 1991 '),
+(28, 'Lion.jpg', 'The Lion King ', '1994', '1h 21m', 'Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.', 'Lion.mp4', ' 7 October 1994'),
+(29, 'Ernest.jpg', 'Ernest Goes to Camp', '1987', '1h 31m', 'Ernest, a lovable loser who works as a summer camp handyman and dreams of becoming a guidance councilor, must find a way to inspire a group of juvenile delinquents as well as stop a shady strip mining company from closing the camp.\n', 'Ernest.mp4', '25 September 1987'),
+(30, 'Witches.jpg', 'The Witches', '1990', '1h 35m', 'A young boy stumbles onto a witch convention and must stop them, even after he has been turned into a mouse.', 'Witches.mp4', '25 May 1990');
 
 -- --------------------------------------------------------
 
@@ -1022,6 +1066,51 @@ INSERT INTO `tbl_music` (`music_id`, `music_name`, `music_singer`, `music_song`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_shows`
+--
+
+DROP TABLE IF EXISTS `tbl_shows`;
+CREATE TABLE IF NOT EXISTS `tbl_shows` (
+  `shows_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `shows_cover` varchar(75) NOT NULL DEFAULT 'cover_default.jpg',
+  `shows_title` varchar(125) NOT NULL,
+  `shows_year` varchar(5) NOT NULL,
+  `shows_runtime` varchar(25) NOT NULL,
+  `shows_storyline` text NOT NULL,
+  `shows_trailer` varchar(75) NOT NULL DEFAULT 'trailer_default.jpg',
+  `shows_release` varchar(125) NOT NULL,
+  PRIMARY KEY (`shows_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_shows`
+--
+
+INSERT INTO `tbl_shows` (`shows_id`, `shows_cover`, `shows_title`, `shows_year`, `shows_runtime`, `shows_storyline`, `shows_trailer`, `shows_release`) VALUES
+(1, 'Cheers.jpg', 'Cheers', '1982–', '22min', 'The regulars of the Boston bar \"Cheers\" share their experiences and lives with each other while drinking or working at the bar where everybody knows your name.', 'Cheers.mp4', '1982–1993'),
+(3, 'Muppet.jpg', 'The Muppet Show', '1976', '30min', 'Kermit the Frog and his fellow Muppets put on a vaudeville show at their theatre, bringing in a famous celebrity to help out for each episode.', 'Logan.mp4', '1976'),
+(4, 'MacGyver.jpg', 'MacGyver', '1985-', '45min', 'The adventures of a secret Agent armed with almost infinite scientific resourcefulness.', 'MacGyver.mp4', '1985-1992'),
+(5, 'Happy.jpg', 'Happy Days', '1974–', '30min', 'The Cunningham family live through the 1950s with help and guidance from the lovable and almost superhuman greaser, Fonzie.', 'Happy.mp4', '1974–1984'),
+(6, 'Knight.jpg', 'Knight Rider ', '1986', '30min', 'A lone crimefighter battles the forces of evil with the help of a virtually indestructible and artificially intelligent supercar.', 'Knight.mp4', '1986'),
+(7, 'mash.jpg', 'M*A*S*H', '1972', '25min', 'The staff of an Army hospital in the Korean War find that laughter is the best way to deal with their situation.', 'mash.mp4', '1972'),
+(8, 'Company.jpg', 'Three Company', '1984', '30min', 'The misadventures of two women and one man living in one apartment and their neighbors.', 'Company.mp4', '1984'),
+(9, 'Team.jpg', 'The A-Team', '1983', '1h', 'Four Vietnam vets, framed for a crime they didnt commit, help the innocent while on the run from the military.', 'Team.mp4', '1983'),
+(10, 'Golden.jpg', 'The Golden Girls', '1985', '32min', 'Four previously married women live together in Miami, sharing their various experiences together and enjoying themselves despite hard times.', 'Golden.mp4', '1985'),
+(11, 'Family.jpg', 'Family Ties ', '1982', '30min', 'Chronicles liberal ex-hippies Steven and Elyse Keaton, their conservative son Alex, daughters Mallory and Jennifer, and later, youngest child Andrew.', 'Family.mp4', '1982'),
+(12, 'Quantum.jpg', 'Quantum Leap', '1989', '1h', 'During a government experiment into time travel, a scientist finds himself trapped in the past, \"leaping\" into the bodies of different people on a regular basis and sorting out their problems whilst trying to get back home to his own time.', 'Quantum.mp4', '1989'),
+(13, 'Mork.jpg', 'Mork & Mindy', '1978', '30min', 'A wacky alien comes to Earth to study its residents and the life of the human woman he boards with is never the same.', 'Mork.mp4', '1978'),
+(14, 'Jetsons.jpg', 'The Jetsons', '1962', '25min', 'The misadventures of a futuristic family.', 'Jetsons.mp4', '1962'),
+(15, 'Night.jpg', 'Night Court ', '1984', '30min', 'An eccentric fun-loving judge presides over an urban night court and all the silliness going on there.', 'Night.mp4', '1984'),
+(16, 'Tom.jpg', 'The Tom and Jerry Comedy Show', '1982', '45min', 'It is about a cat whos chasing a mouse.', 'Tom.mp4', '1982'),
+(17, 'CHiPs.jpg', 'CHiPs', '1977', '30min', 'The adventures of two California Highway Patrol motorcycle officers.', 'CHiPs.mp4', '1977'),
+(18, 'Simpsons.jpg', 'The Simpsons', '1989', '30min', 'The satiric adventures of a working-class family in the misfit city of Springfield.', 'Simpsons.mp4', '1989'),
+(19, 'Angels.jpg', 'Charlie Angels', '1976', '31min', 'A wealthy mystery man named Charlie runs a detective agency via a speakerphone and his personal assistant, John Bosley. His detectives are three beautiful women, who end up in a variety of difficult situations.', 'Angels.mp4', '1976'),
+(20, 'Inspector.jpg', 'Inspector Gadget', '1983', '45min', 'A bumbling bionic police inspector stumbles about on his cases, while his niece and dog secretly do the real investigative work.', 'Inspector.mp4', '1983'),
+(21, 'Smurfs.jpg', 'Smurfs', '1981', '30min', 'The Smurfs are tiny blue creatures that live in mushroom houses in a peaceful forest. They repeatedly try to outwit Gargamel, an evil sorcerer, his apprentice, Scruple, and his mangy cat, Azrael.', 'Smurfs.mp4', '1981');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_studio`
 --
 
@@ -1030,46 +1119,43 @@ CREATE TABLE IF NOT EXISTS `tbl_studio` (
   `studio_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
   `studio_name` varchar(125) NOT NULL,
   PRIMARY KEY (`studio_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_studio`
 --
 
 INSERT INTO `tbl_studio` (`studio_id`, `studio_name`) VALUES
-(1, 'Marvel Studios'),
-(2, 'Syncopy'),
-(3, 'Donners Company'),
-(4, 'Kate Street Picture Company'),
-(5, 'Mandeville Films'),
-(6, 'Cross Creek Pictures'),
-(7, 'Twentieth Century Fox Film Corporation'),
-(8, 'Lava Bear Films'),
-(9, 'Hurwitz Creative'),
-(10, 'DreamWorks Animation'),
-(11, 'Regency Enterprises'),
-(12, 'Wildgaze Films'),
-(13, 'Sony Pictures Entertainment (SPE)'),
-(14, 'Majestic Filmproduktion'),
-(15, 'Lucasfilm'),
-(16, 'Bold Films'),
-(17, 'Voltage Pictures'),
+(1, 'AVCO Embassy Pictures'),
+(2, 'Ross Hunter Productions'),
+(3, 'Vestron Pictures'),
+(4, 'Von Zerneck-Sertner Films'),
+(5, 'Cinema Management Inc.'),
+(6, 'Walt Disney Productions'),
+(7, '	United Artists'),
+(8, ' Ellman Film Enterprises'),
+(9, ' Warner Bros.'),
+(10, ' Translor Films '),
+(11, 'Paramount Pictures'),
+(12, ' Alligator'),
+(13, 'Golden Harvest Company'),
+(14, ' Lorimar Productions'),
+(15, 'Twentieth Century Fox'),
+(16, ' Arco Films'),
+(17, 'Orion Pictures'),
 (18, 'Warner Bros.'),
-(19, 'Fox 2000 Pictures'),
-(20, 'Weinstein Company');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_urating`
---
-
-DROP TABLE IF EXISTS `tbl_urating`;
-CREATE TABLE IF NOT EXISTS `tbl_urating` (
-  `rating_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `rating_number` tinyint(4) NOT NULL,
-  PRIMARY KEY (`rating_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+(19, ' Lorimar Film Entertainment'),
+(20, 'Film Consortium of Canada'),
+(21, 'Walt Disney Pictures'),
+(22, 'Paramount Pictures'),
+(23, 'Warner Bros.'),
+(24, 'Universal Pictures'),
+(25, 'Warner Bros'),
+(26, ' Lorimar Productions'),
+(27, 'Twentieth Century Fox'),
+(28, ' Arco Films'),
+(29, 'Orion Pictures'),
+(30, 'Warner Bros.');
 
 -- --------------------------------------------------------
 
@@ -1086,21 +1172,17 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `user_email` varchar(250) NOT NULL,
   `user_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_ip` varchar(50) NOT NULL DEFAULT 'no',
-  `last_login` varchar(75) NOT NULL,
-  `login_sucess` int(20) NOT NULL,
+  `user_admin` tinyint(4) DEFAULT NULL,
+  `user_access` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`, `last_login`, `login_sucess`) VALUES
-(1, 'Deepkumar Patel', 'admin', 'admin', 'd_patel109038@fanshaweonline.ca', '2021-02-01 04:32:13', '127.0.0.1', '2021-02-07 04:43:30pm', 9),
-(2, 'Sarthak ', 'spidey', 'spidey', 'sarthak@gmail.com', '2021-02-05 21:00:00', '127.0.0.1', '2021-02-05 04:13:59pm', 3),
-(4, 'Jane Eve', 'jane', 'jane', 'jane@gmail.com', '2021-02-05 21:18:01', '127.0.0.1', '2021-02-05 04:18:21pm', 1),
-(5, 'Pan', 'pan', 'pan', 'pan@gmail.com', '2021-02-05 21:21:10', '127.0.0.1', '2021-02-05 04:22:19pm', 2),
-(6, 'kushal', 'kushal', 'kushalshah', 'kushalshah2696@gmail.com', '2021-02-10 01:33:55', '127.0.0.1', '2021-02-09 08:37:13pm', 3);
+INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`, `user_admin`, `user_access`) VALUES
+(1, 'trevor', 'user1', 'password', 't@t.com', '2019-02-01 19:07:35', '::1', 1, 5);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
